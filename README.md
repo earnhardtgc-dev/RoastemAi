@@ -1,23 +1,29 @@
-# 🥵 Roast’emAI  
-**Roast your friends with AI — upload a photo, get roasted instantly, and share it everywhere.**  
+# Roast’emAI — Starter
 
-Roast’emAI is a viral-ready static web app starter with a graffiti-flame vibe.  
-It’s built for speed, fun, and shareability with social integrations and Stripe hooks out of the box.  
+A clean, viral-ready static starter for **Roast’emAI** with:
+- Name change applied throughout
+- OG/Twitter cards
+- Native share + copy link
+- Facebook / Instagram / TikTok / YouTube share buttons
+- Stripe Go Pro (enable by setting `window.STRIPE_PUBLISHABLE_KEY`)
+- PWA manifest + simple service worker
 
----
+## Quick start
+1. Replace `assets/logo-roastemai.png` with your real logo (same filename).
+2. Open `index.html` in a browser (or serve with any static host).
+3. (Optional) Set Stripe publishable key in HTML before `app.js` or at runtime:
+   ```html
+   <script>
+     window.STRIPE_PUBLISHABLE_KEY = "pk_live_or_pk_test_xxx";
+     // window.CHECKOUT_SESSION_ID = "cs_test_123"; // or fetch from backend
+   </script>
+   ```
+4. Wire your roast pipeline in `app.js` where noted.
 
-## ✨ Features
-- 🔥 **AI Roast Flow (stubbed)** – Upload a photo and connect your roast backend.  
-- 📲 **Social Share Buttons** – Native share + Facebook, Instagram, TikTok, and YouTube.  
-- 🖼 **OG & Twitter Cards** – Rich previews when shared.  
-- 💳 **Stripe Integration** – “Go Pro” button included (just drop in your key).  
-- 📦 **PWA Support** – Installable with manifest + service worker.  
-- 🎨 **Dark Graffiti Theme** – Flame head vibe carried throughout.  
+## Deploy
+- Any static hosting (Render static site, Netlify, Vercel, GitHub Pages, S3).
 
----
-
-## 🚀 Quick Start
-1. Clone this repo:
-   ```bash
-   git clone https://github.com/YOURNAME/roastemai.git
-   cd roastemai
+## Notes on social shares
+- Facebook uses a real share URL.
+- Instagram & TikTok do not expose a public web share endpoint; buttons copy the current URL and instruct users to paste in-app.
+- YouTube button opens Shorts upload (change to your channel if desired).
